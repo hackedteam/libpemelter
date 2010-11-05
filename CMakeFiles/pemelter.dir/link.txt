@@ -1,0 +1,2 @@
+/usr/bin/ar cr libpemelter.a  CMakeFiles/pemelter.dir/PEMangler.cc.o CMakeFiles/pemelter.dir/PEParser.cc.o CMakeFiles/pemelter.dir/PEMelter.cc.o
+/usr/bin/ranlib libpemelter.a
