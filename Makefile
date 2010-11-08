@@ -36,10 +36,10 @@ CMAKE_COMMAND = /usr/local/bin/cmake
 RM = /usr/local/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/daniele/devel/libpemelter/trunk
+CMAKE_SOURCE_DIR = /home/daniele/devel/libpemelter
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/daniele/devel/libpemelter/trunk
+CMAKE_BINARY_DIR = /home/daniele/devel/libpemelter
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -66,9 +66,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/daniele/devel/libpemelter/trunk/CMakeFiles /home/daniele/devel/libpemelter/trunk/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/daniele/devel/libpemelter/CMakeFiles /home/daniele/devel/libpemelter/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/daniele/devel/libpemelter/trunk/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/daniele/devel/libpemelter/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

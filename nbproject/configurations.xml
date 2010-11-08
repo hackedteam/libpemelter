@@ -8,6 +8,7 @@
       <itemPath>PEMangler.h</itemPath>
       <itemPath>PEMelter.h</itemPath>
       <itemPath>PEParser.h</itemPath>
+      <itemPath>bio_melt.h</itemPath>
       <itemPath>win32types.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -22,6 +23,7 @@
       <itemPath>PEMangler.cc</itemPath>
       <itemPath>PEMelter.cc</itemPath>
       <itemPath>PEParser.cpp</itemPath>
+      <itemPath>bio_melt.cc</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -49,7 +51,7 @@
       <compileType>
         <ccTool>
           <incDir>
-            <pElem>../../libmelter/trunk</pElem>
+            <pElem>../libmelter</pElem>
           </incDir>
         </ccTool>
         <linkerTool>

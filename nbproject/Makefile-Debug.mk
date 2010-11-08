@@ -35,6 +35,7 @@ OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/PEMangler.o \
 	${OBJECTDIR}/PEParser.o \
+	${OBJECTDIR}/bio_melt.o \
 	${OBJECTDIR}/PEMelter.o
 
 
@@ -56,28 +57,33 @@ LDLIBSOPTIONS=../../libmelter/trunk/build/Debug/GNU-Linux-x86/tests/TestFiles/f2
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-Debug.mk dist/Debug/GNU-Linux-x86/libtrunk.so
+	"${MAKE}"  -f nbproject/Makefile-Debug.mk dist/Debug/GNU-Linux-x86/liblibpemelter.so
 
-dist/Debug/GNU-Linux-x86/libtrunk.so: ../../libmelter/trunk/build/Debug/GNU-Linux-x86/tests/TestFiles/f2
+dist/Debug/GNU-Linux-x86/liblibpemelter.so: ../../libmelter/trunk/build/Debug/GNU-Linux-x86/tests/TestFiles/f2
 
-dist/Debug/GNU-Linux-x86/libtrunk.so: ${OBJECTFILES}
+dist/Debug/GNU-Linux-x86/liblibpemelter.so: ${OBJECTFILES}
 	${MKDIR} -p dist/Debug/GNU-Linux-x86
-	${LINK.cc} -shared -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtrunk.so -fPIC ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${LINK.cc} -shared -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibpemelter.so -fPIC ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
 ${OBJECTDIR}/PEMangler.o: PEMangler.cc 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -I../../libmelter/trunk -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/PEMangler.o PEMangler.cc
+	$(COMPILE.cc) -g -I../libmelter -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/PEMangler.o PEMangler.cc
 
 ${OBJECTDIR}/PEParser.o: PEParser.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -I../../libmelter/trunk -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/PEParser.o PEParser.cpp
+	$(COMPILE.cc) -g -I../libmelter -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/PEParser.o PEParser.cpp
+
+${OBJECTDIR}/bio_melt.o: bio_melt.cc 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -I../libmelter -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/bio_melt.o bio_melt.cc
 
 ${OBJECTDIR}/PEMelter.o: PEMelter.cc 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -I../../libmelter/trunk -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/PEMelter.o PEMelter.cc
+	$(COMPILE.cc) -g -I../libmelter -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/PEMelter.o PEMelter.cc
 
 # Subprojects
 .build-subprojects:
@@ -87,7 +93,7 @@ ${OBJECTDIR}/PEMelter.o: PEMelter.cc
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r build/Debug
-	${RM} dist/Debug/GNU-Linux-x86/libtrunk.so
+	${RM} dist/Debug/GNU-Linux-x86/liblibpemelter.so
 
 # Subprojects
 .clean-subprojects:

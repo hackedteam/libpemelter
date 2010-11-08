@@ -35,6 +35,7 @@ OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/PEMangler.o \
 	${OBJECTDIR}/PEParser.o \
+	${OBJECTDIR}/bio_melt.o \
 	${OBJECTDIR}/PEMelter.o
 
 
@@ -56,13 +57,13 @@ LDLIBSOPTIONS=../../libmelter/trunk/dist/Release/GNU-Linux-x86/libtrunk.a
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-Release.mk dist/Release/GNU-Linux-x86/libtrunk.so
+	"${MAKE}"  -f nbproject/Makefile-Release.mk dist/Release/GNU-Linux-x86/liblibpemelter.so
 
-dist/Release/GNU-Linux-x86/libtrunk.so: ../../libmelter/trunk/dist/Release/GNU-Linux-x86/libtrunk.a
+dist/Release/GNU-Linux-x86/liblibpemelter.so: ../../libmelter/trunk/dist/Release/GNU-Linux-x86/libtrunk.a
 
-dist/Release/GNU-Linux-x86/libtrunk.so: ${OBJECTFILES}
+dist/Release/GNU-Linux-x86/liblibpemelter.so: ${OBJECTFILES}
 	${MKDIR} -p dist/Release/GNU-Linux-x86
-	${LINK.cc} -shared -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtrunk.so -fPIC ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${LINK.cc} -shared -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibpemelter.so -fPIC ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
 ${OBJECTDIR}/PEMangler.o: PEMangler.cc 
 	${MKDIR} -p ${OBJECTDIR}
@@ -73,6 +74,11 @@ ${OBJECTDIR}/PEParser.o: PEParser.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -I../../libmelter/trunk -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/PEParser.o PEParser.cpp
+
+${OBJECTDIR}/bio_melt.o: bio_melt.cc 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -I../../libmelter/trunk -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/bio_melt.o bio_melt.cc
 
 ${OBJECTDIR}/PEMelter.o: PEMelter.cc 
 	${MKDIR} -p ${OBJECTDIR}
@@ -87,7 +93,7 @@ ${OBJECTDIR}/PEMelter.o: PEMelter.cc
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r build/Release
-	${RM} dist/Release/GNU-Linux-x86/libtrunk.so
+	${RM} dist/Release/GNU-Linux-x86/liblibpemelter.so
 
 # Subprojects
 .clean-subprojects:

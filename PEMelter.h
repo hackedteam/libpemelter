@@ -18,6 +18,13 @@ public:
     PEMelter();
     virtual ~PEMelter();
     
+    virtual void set_cooked_file(const char* cooked);
+    
+    virtual std::size_t write(const char* data, std::size_t size);
+    virtual bool empty() { return melter_->empty(); }
+    virtual const char* get_data(std::size_t* size);
+    virtual void clear();
+    
 private:
     PEParser* parser_;
     PEMangler* mangler_;
